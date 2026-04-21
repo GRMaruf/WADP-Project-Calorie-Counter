@@ -1,0 +1,251 @@
+<footer class="cal-footer">
+
+  <div class="footer-main">
+
+    <!-- Brand Column -->
+    <div>
+      <a href="{% url 'home_page' %}" class="footer-brand-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="white">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+          </svg>
+        </div>
+        CALTRACK
+      </a>
+      <p class="footer-tagline">Your personal nutrition companion. Track calories, crush goals, and build healthier habits — one meal at a time.</p>
+      <div class="footer-stats">
+        <div>
+          <div class="footer-stat-num">500+</div>
+          <div class="footer-stat-lbl">Foods</div>
+        </div>
+        <div>
+          <div class="footer-stat-num">10K+</div>
+          <div class="footer-stat-lbl">Meals Logged</div>
+        </div>
+        <div>
+          <div class="footer-stat-num">98%</div>
+          <div class="footer-stat-lbl">Goal Rate</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigate Column -->
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li>
+          <a href="{% url 'home_page' %}">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'dashboard_page' %}">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'profile_page' %}">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+            Profile
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Account Column -->
+    <div>
+      <div class="footer-col-title">Account</div>
+      <ul class="footer-links">
+        <li>
+          <a href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            Terms of Use
+          </a>
+        </li>
+        <li>
+          <a href="mailto:support@caltrack.com">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Contact Us
+          </a>
+        </li>
+        {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'logout_page' %}" style="color: #e84040;">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5-5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+            Logout
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom-wrap">
+    <div class="footer-bottom">
+      <div class="footer-copy">© {% now "Y" %} <span>CalTrack</span> — Built for your health journey</div>
+      <div class="footer-badges">
+        <div class="footer-badge">Calorie Tracker</div>
+        <div class="footer-badge">Diet Friendly</div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<style>
+  .cal-footer {
+    background: var(--clr-surface);
+    border-top: 1px solid var(--clr-border);
+    margin-top: auto;
+    font-family: var(--font-body);
+  }
+
+  .footer-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-brand-logo {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, var(--clr-lime), var(--clr-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--clr-muted);
+    line-height: 1.6;
+    max-width: 240px;
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-stats {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-stat-num {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--clr-text);
+    line-height: 1;
+  }
+
+  .footer-stat-lbl {
+    font-size: 11px;
+    color: var(--clr-muted);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .footer-col-title {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--clr-text);
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--clr-text-sec);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color var(--transition);
+  }
+
+  .footer-links a svg { width: 13px; height: 13px; opacity: 0.5; }
+  .footer-links a:hover { color: var(--clr-lime-dark); }
+  .footer-links a:hover svg { opacity: 1; }
+
+  .footer-bottom-wrap {
+    border-top: 1px solid var(--clr-border);
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: var(--clr-muted);
+  }
+
+  .footer-copy span {
+    color: var(--clr-lime-dark);
+    font-weight: 600;
+  }
+
+  .footer-badges {
+    display: flex;
+    gap: 8px;
+  }
+
+  .footer-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    background: var(--clr-lime-light);
+    color: var(--clr-lime-dark);
+    border: 1px solid rgba(122, 191, 16, 0.25);
+  }
+
+  /* ── Responsive ───────────────────────────────── */
+  @media (max-width: 768px) {
+    .footer-main {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .footer-brand { grid-column: 1 / -1; }
+    .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .footer-main { grid-template-columns: 1fr; }
+  }
+</style>

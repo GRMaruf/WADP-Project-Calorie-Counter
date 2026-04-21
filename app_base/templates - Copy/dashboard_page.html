@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Dashbord Page</h1>
+  {% comment %}this page graphically presents user's bmr, required calorie amount and today's total calory consumptions,{% endcomment %}
+  <p>Your BMR: {{ request.user.profile.bmr }}</p>
+  <p>Total calorie needed: {{ request.user.profile.bmr }} cal</p>
+  <p>
+    Today's consumptions:<ul>
+      {% for x in consumptions %}
+        <li>{{ x.item_name }} - {{ x.calorie_consumed }} cal</li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'calorie_input_page' %}"> + consumptions</a>
+  </p>
+  <p>Total consumption: {{ total }} cal</p>
+{% endblock %}

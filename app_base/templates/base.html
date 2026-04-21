@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
+        rel="stylesheet" />
+
+  <style>
+    /* ── CSS Variables ────────────────────────────── */
+    :root {
+      --clr-bg:          #f8f9fa;
+      --clr-surface:     #ffffff;
+      --clr-surface-2:   #f0f2f5;
+      --clr-border:      #e2e6ea;
+      --clr-border-dark: #ced4da;
+      --clr-text:        #1a1a1a;
+      --clr-text-sec:    #555555;
+      --clr-muted:       #999999;
+      --clr-lime:        #7abf10;
+      --clr-lime-light:  #f0f7e0;
+      --clr-lime-dark:   #5a8f0a;
+      --clr-orange:      #f5a623;
+      --clr-orange-light:#fff4e0;
+      --clr-coral:       #e84040;
+      --clr-coral-light: #fdeaea;
+
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body:    'DM Sans', sans-serif;
+
+      --radius-sm:   6px;
+      --radius-md:   12px;
+      --radius-lg:   20px;
+      --radius-pill: 999px;
+
+      --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
+
+      --nav-height: 64px;
+      --transition: 0.2s ease;
+    }
+
+    /* ── Reset & Base ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--clr-bg);
+      color: var(--clr-text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main, .page-content { flex: 1; }
+
+    /* ── Typography ───────────────────────────────── */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      line-height: 1.15;
+      color: var(--clr-text);
+      text-transform: uppercase;
+    }
+
+    p { color: var(--clr-text-sec); font-size: 15px; }
+
+    a {
+      color: var(--clr-lime-dark);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    a:hover { color: var(--clr-orange); }
+
+    /* ── Accent Gradient ──────────────────────────── */
+    .text-gradient {
+      background: linear-gradient(90deg, var(--clr-lime), var(--clr-orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Buttons ──────────────────────────────────── */
+    .btn-primary-cal {
+      background: var(--clr-lime);
+      color: #ffffff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      display: inline-block;
+    }
+    .btn-primary-cal:hover {
+      background: var(--clr-lime-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+      color: #ffffff;
+    }
+
+    .btn-outline-cal {
+      background: transparent;
+      color: var(--clr-lime-dark);
+      border: 1.5px solid var(--clr-lime);
+      padding: 9px 22px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: inline-block;
+    }
+    .btn-outline-cal:hover {
+      background: var(--clr-lime);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ── Cards ────────────────────────────────────── */
+    .card-cal {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+    .card-cal:hover {
+      border-color: var(--clr-lime);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    /* ── Badge / Pill ─────────────────────────────── */
+    .badge-cal {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--clr-lime-light);
+      color: var(--clr-lime-dark);
+      border: 1px solid rgba(122, 191, 16, 0.3);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge-orange {
+      background: var(--clr-orange-light);
+      color: #b87010;
+      border: 1px solid rgba(245, 166, 35, 0.3);
+    }
+
+    .badge-red {
+      background: var(--clr-coral-light);
+      color: var(--clr-coral);
+      border: 1px solid rgba(232, 64, 64, 0.2);
+    }
+
+    /* ── Progress Bar ─────────────────────────────── */
+    .progress-cal {
+      background: var(--clr-surface-2);
+      border-radius: var(--radius-pill);
+      height: 8px;
+      overflow: hidden;
+    }
+    .progress-cal-fill {
+      height: 100%;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(90deg, var(--clr-lime), var(--clr-orange));
+      transition: width 0.5s ease;
+    }
+
+    /* ── Form Controls ────────────────────────────── */
+    .input-cal {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border-dark);
+      color: var(--clr-text);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      width: 100%;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .input-cal:focus {
+      outline: none;
+      border-color: var(--clr-lime);
+      box-shadow: 0 0 0 3px rgba(122, 191, 16, 0.15);
+    }
+    .input-cal::placeholder { color: var(--clr-muted); }
+
+    /* ── Stat Numbers ─────────────────────────────── */
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--clr-text);
+    }
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--clr-muted);
+    }
+
+    /* ── Divider ──────────────────────────────────── */
+    .divider-cal {
+      border: none;
+      border-top: 1px solid var(--clr-border);
+      margin: 1.5rem 0;
+    }
+
+    /* ── Scrollbar ────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--clr-bg); }
+    ::-webkit-scrollbar-thumb { background: var(--clr-border-dark); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--clr-muted); }
+
+    /* ── Bootstrap Overrides ──────────────────────── */
+    .container { max-width: 1200px; }
+    .text-muted { color: var(--clr-muted) !important; }
+  </style>
+
+  <title>{% block title %}CalTrack{% endblock %}</title>
+</head>
+<body>
+
+  {% include 'nav.html' %}
+
+  <main class="page-content">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  {% include 'footer.html' %}
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+
+  {% block scripts %}{% endblock %}
+
+</body>
+</html>

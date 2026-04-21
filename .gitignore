@@ -1,0 +1,10 @@
+# Python
+*.pyc
+__pycache__/
+
+# Django
+# db.sqlite3
+migrations/
+
+# OS files
+*.log

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Profile Page</h1>
+  {% comment %}It contains about the user's name, age, gender, height, weight, bmr, today's total amount of consumption and profile update option with beautiful user freindly graphical interface.{% endcomment %}
+  <p>{{ request.user }}</p>
+  {% if request.user.profile %}
+    <p>{{ request.user.profile.name }}</p>
+    <p>{{ request.user.profile.age }}</p>
+    <p>{{ request.user.profile.bmr }}</p>
+  {% endif %}
+
+  <a href="{% url 'update_profile_page' %}">Update</a>
+{% endblock %}
