@@ -51,14 +51,34 @@ def profile_page(request):
     if profile:
         total_calories_today = profile.total_consumed_today
         calorie_needed = profile.bmr-profile.total_consumed_today
-
     else:
         total_calories_today = 0
         calorie_needed = 0
+    
+    try:
+        today = CalorieHistoryModel.objects.get(
+            user = request.user,
+            date = date.today()
+        )
+    except:
+        today = None
+
+    if today:
+        total_protein_today = today.total_protein_today
+        total_carbs_today = today.total_carbs_today
+        total_fat_today = today.total_fat_today
+    else:
+        total_protein_today = 0
+        total_carbs_today = 0
+        total_fat_today = 0
 
     context = {
         'total_calories_today': total_calories_today,
-        'calorie_needed': calorie_needed
+        'calorie_needed': calorie_needed, 
+        'total_protein_today': total_protein_today,
+        'total_carbs_today': total_carbs_today,
+        'total_fat_today': total_fat_today,
+
     }
     return render(request, 'profile_page.html', context)
 

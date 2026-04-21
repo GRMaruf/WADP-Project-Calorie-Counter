@@ -32,7 +32,7 @@
       </div>
       <div class="stat-card-val">{{ total|default:"0" }}</div>
       <div class="stat-card-sub">
-        of {{ request.user.profile.bmr|default:"—" }} kcal daily goal
+        of {{ request.user.profile.bmr|floatformat:2|default:"—" }} kcal daily goal
       </div>
     </div>
 
@@ -44,7 +44,7 @@
         BMR
       </div>
       <div class="stat-card-val" style="color:var(--clr-orange);">
-        {{ request.user.profile.bmr|default:"—" }}
+        {{ request.user.profile.bmr|floatformat:2|default:"—" }}
       </div>
       <div class="stat-card-sub">Base metabolic rate</div>
     </div>
@@ -59,7 +59,7 @@
       {% if request.user.profile.bmr and total %}
         <div class="stat-card-val"
              style="color:{% if total > request.user.profile.bmr %}var(--clr-coral){% else %}var(--clr-lime){% endif %};">
-          {{ request.user.profile.bmr|add:"-"|add:total }}
+          {{ request.user.profile.bmr|add:"-"|add:total|floatformat:2 }}
         </div>
         <div class="stat-card-sub">
           {% if total > request.user.profile.bmr %}
@@ -163,10 +163,10 @@
           {% if request.user.profile.bmr and total %}
             {% if total > request.user.profile.bmr %}
               <span style="color:var(--clr-coral);">
-                {{ total|add:"-"|add:request.user.profile.bmr }} kcal over goal
+                {{ total|add:"-"|add:request.user.profile.bmr|floatformat:2 }} kcal over goal
               </span>
             {% else %}
-              {{ request.user.profile.bmr|add:"-"|add:total }} kcal remaining today
+              {{ request.user.profile.bmr|add:"-"|add:total|floatformat:2 }} kcal remaining today
             {% endif %}
           {% else %}
             Log food to see progress

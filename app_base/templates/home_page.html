@@ -5,7 +5,7 @@
 
 <!-- ── Hero ─────────────────────────────────────── -->
 <section class="home-hero">
-  <div class="home-hero-text">
+  <div>
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
       Free to get started
@@ -17,7 +17,7 @@
     </h1>
     <p class="hero-sub">
       CalTrack makes it effortless to log your meals, monitor your macros,
-      and stay on track with your weight-loss goals — every single day.
+      and stay on track with your weight-loss goals.
     </p>
     <div class="hero-btns">
       <a href="{% url 'register_page' %}" class="btn-primary-cal">
@@ -35,17 +35,17 @@
     </div>
   </div>
 
-  <!-- Live-feel dashboard preview -->
+  <!-- Dashboard preview card -->
   <div class="hero-visual">
     <div class="hv-label">Today's Summary</div>
     <div class="hv-cal-row">
       <div>
         <div class="hv-cal-num">1,340</div>
-        <div class="hv-cal-goal">of 1,800 kcal goal</div>
+        <div style="font-size:11px;color:var(--clr-muted);">of 1,800 kcal goal</div>
       </div>
       <div style="text-align:right;">
-        <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--clr-lime);">460</div>
-        <div style="font-size:11px;color:var(--clr-muted);">kcal remaining</div>
+        <div style="font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--clr-lime);">460</div>
+        <div style="font-size:11px;color:var(--clr-muted);">remaining</div>
       </div>
     </div>
     <div class="progress-cal" style="margin-bottom:1.2rem;">
@@ -55,94 +55,73 @@
       <div class="hv-macro">
         <div class="hv-macro-val" style="color:var(--clr-lime);">148g</div>
         <div class="hv-macro-lbl">Protein</div>
-        <div class="hv-macro-bar" style="background:var(--clr-lime);"></div>
       </div>
       <div class="hv-macro">
         <div class="hv-macro-val" style="color:var(--clr-orange);">112g</div>
         <div class="hv-macro-lbl">Carbs</div>
-        <div class="hv-macro-bar" style="background:var(--clr-orange);"></div>
       </div>
       <div class="hv-macro">
         <div class="hv-macro-val" style="color:var(--clr-coral);">38g</div>
         <div class="hv-macro-lbl">Fat</div>
-        <div class="hv-macro-bar" style="background:var(--clr-coral);"></div>
       </div>
     </div>
     <div class="hv-meals">
       <div class="hv-meal"><span class="hv-meal-name">Oatmeal + Banana</span><span class="hv-meal-cal">340 kcal</span></div>
       <div class="hv-meal"><span class="hv-meal-name">Grilled Chicken Salad</span><span class="hv-meal-cal">520 kcal</span></div>
       <div class="hv-meal"><span class="hv-meal-name">Greek Yogurt</span><span class="hv-meal-cal">180 kcal</span></div>
-      <div class="hv-meal"><span class="hv-meal-name">Protein Shake</span><span class="hv-meal-cal">300 kcal</span></div>
     </div>
   </div>
 </section>
 
-<!-- ── Stats Strip ───────────────────────────────── -->
-<div class="stats-strip">
-  <div class="stats-inner">
-    <div><div class="stat-number">10K+</div><div class="stat-label">Active Users</div></div>
-    <div><div class="stat-number">500+</div><div class="stat-label">Foods Tracked</div></div>
-    <div><div class="stat-number">2M+</div><div class="stat-label">Meals Logged</div></div>
-    <div><div class="stat-number">98%</div><div class="stat-label">Goal Success Rate</div></div>
-  </div>
-</div>
-
 <!-- ── Features ──────────────────────────────────── -->
 <section class="home-features">
   <div class="section-label">Why CalTrack?</div>
-  <h2 class="section-title">Everything You Need<br>To Hit Your Goal</h2>
-  <p class="section-sub">Simple tools, powerful insights — designed for people serious about losing weight and keeping it off.</p>
+  <h2 class="section-title">Everything You Need</h2>
+  <p class="section-sub">Simple tools, powerful insights — designed for people serious about losing weight.</p>
 
   <div class="features-grid">
-
+    <div class="card-cal">
+      <div class="feature-icon" style="background:var(--clr-lime-light);">
+        <svg viewBox="0 0 24 24" fill="var(--clr-lime)"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+      </div>
+      <div class="feature-title">Dashboard</div>
+      <p class="feature-desc">See your daily calories and macros at a glance.</p>
+    </div>
+    <div class="card-cal">
+      <div class="feature-icon" style="background:var(--clr-orange-light);">
+        <svg viewBox="0 0 24 24" fill="var(--clr-orange)"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+      </div>
+      <div class="feature-title">Meal Logging</div>
+      <p class="feature-desc">Log meals in seconds from hundreds of foods.</p>
+    </div>
+    <div class="card-cal">
+      <div class="feature-icon" style="background:var(--clr-coral-light);">
+        <svg viewBox="0 0 24 24" fill="var(--clr-coral)"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+      </div>
+      <div class="feature-title">Progress</div>
+      <p class="feature-desc">Track your weight journey and hit your goals.</p>
+    </div>
     <div class="card-cal">
       <div class="feature-icon" style="background:var(--clr-lime-light);">
         <svg viewBox="0 0 24 24" fill="var(--clr-lime)"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
       </div>
-      <div class="feature-title">Personal Dashboard</div>
-      <p class="feature-desc">See your daily calories, macros, and progress at a glance. Fully tailored to your weight-loss goal.</p>
+      <div class="feature-title">Profile</div>
+      <p class="feature-desc">Personalised BMR and calorie goals just for you.</p>
     </div>
-
     <div class="card-cal">
       <div class="feature-icon" style="background:var(--clr-orange-light);">
         <svg viewBox="0 0 24 24" fill="var(--clr-orange)"><path d="M18.6 6.62c-1.44 0-2.8.56-3.77 1.53L12 10.66 10.48 12h.01L7.8 14.39c-.64.64-1.49.99-2.4.99-1.87 0-3.39-1.51-3.39-3.38S3.53 8.62 5.4 8.62c.91 0 1.76.35 2.44 1.03l1.13 1 1.51-1.34L9.22 8.2C8.2 7.18 6.84 6.62 5.4 6.62 2.42 6.62 0 9.04 0 12s2.42 5.38 5.4 5.38c1.44 0 2.8-.56 3.77-1.53l2.83-2.5.01.01L13.52 12h-.01l2.69-2.39c.64-.64 1.49-.99 2.4-.99 1.87 0 3.39 1.51 3.39 3.38s-1.52 3.38-3.39 3.38c-.9 0-1.76-.35-2.44-1.03l-1.14-1.01-1.51 1.34 1.27 1.12c1.02 1.01 2.37 1.57 3.82 1.57 2.98 0 5.4-2.41 5.4-5.38s-2.42-5.37-5.4-5.37z"/></svg>
       </div>
-      <div class="feature-title">Macro Tracking</div>
-      <p class="feature-desc">Track protein, carbs, and fats with precision. Balance your macros to maximise fat loss and energy.</p>
+      <div class="feature-title">Macros</div>
+      <p class="feature-desc">Balance protein, carbs and fat for fat loss.</p>
     </div>
-
-    <div class="card-cal">
-      <div class="feature-icon" style="background:var(--clr-coral-light);">
-        <svg viewBox="0 0 24 24" fill="var(--clr-coral)"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
-      </div>
-      <div class="feature-title">Meal Logging</div>
-      <p class="feature-desc">Log breakfast, lunch, dinner and snacks in seconds. Search from hundreds of foods or add your own.</p>
-    </div>
-
-    <div class="card-cal">
-      <div class="feature-icon" style="background:var(--clr-lime-light);">
-        <svg viewBox="0 0 24 24" fill="var(--clr-lime)"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
-      </div>
-      <div class="feature-title">Progress Charts</div>
-      <p class="feature-desc">Visualise your weight journey over time. Spot trends, celebrate milestones, and stay motivated.</p>
-    </div>
-
-    <div class="card-cal">
-      <div class="feature-icon" style="background:var(--clr-orange-light);">
-        <svg viewBox="0 0 24 24" fill="var(--clr-orange)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-      </div>
-      <div class="feature-title">Calorie Goals</div>
-      <p class="feature-desc">Set a personalised daily calorie target based on your weight, height, age, and activity level.</p>
-    </div>
-
     <div class="card-cal">
       <div class="feature-icon" style="background:var(--clr-coral-light);">
         <svg viewBox="0 0 24 24" fill="var(--clr-coral)"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
       </div>
-      <div class="feature-title">Secure & Private</div>
-      <p class="feature-desc">Your data belongs to you. We never sell your information or share it with third parties.</p>
+      <div class="feature-title">Private</div>
+      <p class="feature-desc">Your data is yours — never sold or shared.</p>
     </div>
-
   </div>
 </section>
 
@@ -150,9 +129,11 @@
 <section class="home-cta-wrap">
   <div class="home-cta">
     <h2>Ready To Start<br>Your <span class="text-gradient">Journey?</span></h2>
-    <p>Join thousands of people who've already transformed their eating habits with CalTrack. It's free, fast, and built for real results.</p>
+    <p>Join thousands of people who've already transformed their eating habits with CalTrack.</p>
     <div class="cta-btns">
-      <a href="{% url 'register_page' %}" class="btn-primary-cal" style="font-size:15px;padding:13px 32px;">Create Free Account</a>
+      <a href="{% url 'register_page' %}" class="btn-primary-cal" style="font-size:15px;padding:13px 32px;">
+        Create Free Account
+      </a>
       <a href="{% url 'login_page' %}" class="cta-ghost-btn">Log In Instead</a>
     </div>
   </div>
@@ -167,7 +148,7 @@
   .home-hero {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 5rem 2rem 4rem;
+    padding: 4rem 2rem 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
@@ -180,7 +161,7 @@
     gap: 6px;
     background: var(--clr-lime-light);
     color: var(--clr-lime-dark);
-    border: 1px solid rgba(122, 191, 16, 0.3);
+    border: 1px solid rgba(122,191,16,0.3);
     padding: 5px 14px;
     border-radius: var(--radius-pill);
     font-size: 12px;
@@ -189,21 +170,20 @@
   }
 
   .hero-badge-dot {
-    width: 7px;
-    height: 7px;
+    width: 7px; height: 7px;
     border-radius: 50%;
     background: var(--clr-lime);
     animation: pulse 2s infinite;
   }
 
   @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.85); }
+    0%, 100% { opacity:1; transform:scale(1); }
+    50%       { opacity:0.5; transform:scale(0.85); }
   }
 
   .hero-title {
     font-family: var(--font-display);
-    font-size: 58px;
+    font-size: 52px;
     font-weight: 800;
     line-height: 1.05;
     text-transform: uppercase;
@@ -215,17 +195,13 @@
     font-size: 15px;
     color: var(--clr-text-sec);
     line-height: 1.7;
-    max-width: 440px;
+    max-width: 420px;
     margin-bottom: 2rem;
   }
 
-  .hero-btns {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
 
-  /* Hero Visual Card */
+  /* Hero visual card */
   .hero-visual {
     background: var(--clr-surface);
     border: 1px solid var(--clr-border);
@@ -236,10 +212,8 @@
 
   .hv-label {
     font-family: var(--font-display);
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
     color: var(--clr-muted);
     margin-bottom: 1rem;
   }
@@ -253,146 +227,94 @@
 
   .hv-cal-num {
     font-family: var(--font-display);
-    font-size: 48px;
-    font-weight: 800;
-    color: var(--clr-text);
-    line-height: 1;
+    font-size: 44px; font-weight: 800;
+    color: var(--clr-text); line-height: 1;
   }
-
-  .hv-cal-goal { font-size: 12px; color: var(--clr-muted); font-weight: 500; }
 
   .hv-macros {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 8px;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
   }
 
   .hv-macro {
     background: var(--clr-surface-2);
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 8px;
+    padding: 9px;
     text-align: center;
   }
 
-  .hv-macro-val {
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 800;
-  }
+  .hv-macro-val { font-family: var(--font-display); font-size: 18px; font-weight: 800; }
+  .hv-macro-lbl { font-size: 10px; color: var(--clr-muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
 
-  .hv-macro-lbl {
-    font-size: 10px;
-    color: var(--clr-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-  }
-
-  .hv-macro-bar {
-    height: 4px;
-    border-radius: var(--radius-pill);
-    margin-top: 6px;
-    opacity: 0.6;
-  }
-
-  .hv-meals { display: flex; flex-direction: column; gap: 6px; }
+  .hv-meals { display: flex; flex-direction: column; gap: 5px; }
 
   .hv-meal {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 10px;
+    padding: 7px 9px;
     background: var(--clr-surface-2);
-    border-radius: 8px;
+    border-radius: 7px;
     font-size: 12px;
   }
 
   .hv-meal-name { font-weight: 600; color: var(--clr-text-sec); }
-  .hv-meal-cal {
-    font-weight: 700;
-    color: var(--clr-lime-dark);
-    font-family: var(--font-display);
-    font-size: 14px;
-  }
-
-  /* ── Stats Strip ──────────────────────────────── */
-  .stats-strip {
-    background: var(--clr-surface);
-    border-top: 1px solid var(--clr-border);
-    border-bottom: 1px solid var(--clr-border);
-    padding: 1.5rem 2rem;
-  }
-
-  .stats-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    text-align: center;
-  }
+  .hv-meal-cal { font-weight: 700; color: var(--clr-lime-dark); font-family: var(--font-display); font-size: 13px; }
 
   /* ── Features ─────────────────────────────────── */
   .home-features {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
   }
 
   .section-label {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
     color: var(--clr-lime-dark);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
 
   .section-title {
     font-family: var(--font-display);
-    font-size: 40px;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: var(--clr-text);
-    margin-bottom: 0.5rem;
-  }
-
-  .section-sub {
-    font-size: 14px;
-    color: var(--clr-muted);
-    max-width: 500px;
-    margin-bottom: 2.5rem;
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .feature-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-
-  .feature-icon svg { width: 22px; height: 22px; }
-
-  .feature-title {
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 36px; font-weight: 800;
     text-transform: uppercase;
     color: var(--clr-text);
     margin-bottom: 0.4rem;
   }
 
-  .feature-desc { font-size: 13px; color: var(--clr-muted); line-height: 1.6; }
+  .section-sub {
+    font-size: 14px; color: var(--clr-muted);
+    max-width: 480px;
+    margin-bottom: 2rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+
+  .feature-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 0.8rem;
+  }
+
+  .feature-icon svg { width: 20px; height: 20px; }
+
+  .feature-title {
+    font-family: var(--font-display);
+    font-size: 17px; font-weight: 800;
+    text-transform: uppercase;
+    color: var(--clr-text);
+    margin-bottom: 0.3rem;
+  }
+
+  .feature-desc { font-size: 12px; color: var(--clr-muted); line-height: 1.6; }
 
   /* ── CTA ──────────────────────────────────────── */
   .home-cta-wrap {
@@ -403,69 +325,54 @@
 
   .home-cta {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
     text-align: center;
-    border-radius: 24px;
+    border-radius: 20px;
   }
 
   .home-cta h2 {
     font-family: var(--font-display);
-    font-size: 46px;
-    font-weight: 800;
+    font-size: 40px; font-weight: 800;
     text-transform: uppercase;
-    color: #ffffff;
-    margin-bottom: 0.75rem;
+    color: #fff;
+    margin-bottom: 0.6rem;
   }
 
   .home-cta p {
-    font-size: 14px;
-    color: #aaaaaa;
-    margin-bottom: 2rem;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 13px; color: #777;
+    max-width: 440px;
+    margin: 0 auto 1.8rem;
     line-height: 1.7;
   }
 
-  .cta-btns {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
   .cta-ghost-btn {
     background: transparent;
-    color: #ffffff;
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
-    padding: 12px 30px;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    padding: 12px 28px;
     border-radius: var(--radius-pill);
     font-family: var(--font-body);
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 14px; font-weight: 600;
     text-decoration: none;
-    transition: all var(--transition);
+    transition: border-color var(--transition);
     display: inline-block;
   }
 
-  .cta-ghost-btn:hover {
-    border-color: rgba(255, 255, 255, 0.7);
-    color: #fff;
-  }
+  .cta-ghost-btn:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
 
   /* ── Responsive ───────────────────────────────── */
   @media (max-width: 900px) {
-    .home-hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
-    .hero-title { font-size: 44px; }
+    .home-hero { grid-template-columns: 1fr; padding: 3rem 1.5rem 2rem; }
+    .hero-title { font-size: 42px; }
     .features-grid { grid-template-columns: 1fr 1fr; }
-    .stats-inner { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 560px) {
-    .hero-title { font-size: 36px; }
+    .hero-title { font-size: 34px; }
     .features-grid { grid-template-columns: 1fr; }
-    .stats-inner { grid-template-columns: repeat(2, 1fr); }
-    .home-cta h2 { font-size: 34px; }
+    .home-cta h2 { font-size: 32px; }
   }
 </style>
 {% endblock %}

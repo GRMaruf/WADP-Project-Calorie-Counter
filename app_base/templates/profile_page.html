@@ -30,7 +30,7 @@
             <span class="ptag ptag-orange">{{ request.user.profile.gender }}</span>
           {% endif %}
           {% if request.user.profile.bmr %}
-            <span class="ptag ptag-red">{{ request.user.profile.bmr }} kcal / day</span>
+            <span class="ptag ptag-red">{{ request.user.profile.bmr|floatformat:2 }} kcal / day</span>
           {% endif %}
         </div>
       </div>
@@ -107,13 +107,13 @@
       <div class="bmr-card">
         <div class="bmr-card-title">Basal Metabolic Rate</div>
         {% if request.user.profile.bmr %}
-          <div class="bmr-num">{{ request.user.profile.bmr }}</div>
+          <div class="bmr-num">{{ request.user.profile.bmr|floatformat:2 }}</div>
         {% else %}
           <div class="bmr-num">—</div>
         {% endif %}
         <div class="bmr-unit">calories / day at rest</div>
         <div class="bmr-desc">
-          Your body burns <strong>{{ request.user.profile.bmr|default:'this many' }} kcal</strong>
+          Your body burns <strong>{{ request.user.profile.bmr|floatformat:2|default:'this many' }} kcal</strong>
           daily just to maintain basic functions. Your personalised calorie goal accounts for your activity level on top of this.
         </div>
       </div>
@@ -128,7 +128,7 @@
         <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px;">
           <div>
             <div class="stat-number">{{ total_calories_today|default:'0' }}</div>
-            <div style="font-size:12px;color:var(--clr-muted);font-weight:500;">of {{ request.user.profile.bmr|default:'—' }} kcal goal</div>
+            <div style="font-size:12px;color:var(--clr-muted);font-weight:500;">of {{ request.user.profile.bmr|floatformat:2|default:'—' }} kcal goal</div>
           </div>
           {% if total_calories_today and request.user.profile.bmr %}
             {% if total_calories_today <= request.user.profile.bmr %}
