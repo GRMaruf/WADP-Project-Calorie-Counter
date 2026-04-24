@@ -1,0 +1,22 @@
+{% for field in form %}
+  <div class="mb-3">
+    <label class="form-label fw-semibold">{{ field.label }}</label>
+
+    {{ field }}
+
+    {% if field.errors %}
+      <div class="text-danger" style="font-size: small;">{{ field.errors }}</div>
+    {% else %}
+      {% if show_help_text %}
+        <div class="text-dark fw-light" style="font-size: small;">{{ field.help_text }}</div>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endfor %}
+
+{% comment %}"errors": form.errors.values(),{% endcomment %}
+{% if errors %}
+  {% for error in errors %}
+    <div class="text-danger small">{{ error }}</div>
+  {% endfor %}
+{% endif %}

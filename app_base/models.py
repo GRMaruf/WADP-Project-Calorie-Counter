@@ -10,10 +10,10 @@ class ProfileModel(models.Model):
         ('Female', 'Female'),
     ]
     name = models.CharField(max_length=255, null=True)
-    age = models.IntegerField(null=True)
+    age = models.IntegerField(null=True, default=0)
     gender = models.CharField(choices= GENDER, max_length=50, null=True)
-    height = models.FloatField(null=True)
-    weight = models.FloatField(null=True)
+    height = models.FloatField(null=True, default=0.0)
+    weight = models.FloatField(null=True, default=0.0)
     bmr = models.FloatField(null=True)
     total_consumed_today = models.FloatField(null=True)
     goal_weight = models.FloatField(null=True)

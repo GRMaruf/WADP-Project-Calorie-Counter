@@ -12,15 +12,7 @@
     <form method="post" novalidate>
       {% csrf_token %}
 
-      {% if form.non_field_errors %}
-        <div class="form-errors">
-          {% for error in form.non_field_errors %}
-            <div class="form-error-msg">{{ error }}</div>
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      {{ form.as_p }}
+      {% include 'form_base.html' %}
 
       <hr class="form-divider"/>
 

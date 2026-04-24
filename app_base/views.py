@@ -16,6 +16,18 @@ def register_page(request):
         if form_data.is_valid():
             form_data.save()
             return redirect('login_page')
+        else:
+            errors = list(form_data.errors.values())
+            for field in form_data:
+                if field.errors in errors:
+                    errors.remove(field.errors)
+            context = {
+                'form': form_data,
+                "errors": errors,
+                'heading': 'Register User',
+                'action': 'Register',
+            }
+            return render(request, 'base-auth.html', context)
     
     form = RegisterForm()
     context = {
@@ -33,6 +45,18 @@ def login_page(request):
             user = form_data.get_user()
             login(request, user)
             return redirect('profile_page')
+        else:
+            errors = list(form_data.errors.values())
+            for field in form_data:
+                if field.errors in errors:
+                    errors.remove(field.errors)
+            context = {
+                'form': form_data,
+                "errors": errors,
+                'heading': 'Login User',
+                'action': 'Login'
+            }
+            return render(request, 'base-auth.html', context)
     form = LoginForm()
     context = {
         'form': form,
